@@ -17,3 +17,25 @@ const func = function() {
 }
 
 console.log(typeof obj1);
+
+// ---------------------------------------------------------
+//Two types of memory : Stack (primitive are stored, stack provide the copy of the variable) and heap(non primitive are stored, it provide the reference of the variable)
+
+console.log("Example of primitive stored in stack"); 
+let myName= "Yashika";
+let yourName = myName;
+yourName ="Anukool";
+console.log(myName); //Yashika
+console.log(yourName); //Anukool
+
+
+console.log("Example of non-primitive stored in heap"); 
+let obj3 = {
+    name: "Yashika"
+}
+let obj4 = obj3;
+obj4.name = "Anukool";
+console.log(obj3.name); //Anukool
+console.log(obj4.name); //Anukool
+
+
