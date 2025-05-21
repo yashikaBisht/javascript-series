@@ -35,3 +35,53 @@ for(const [key, value] of map1) {
 }
 
 console.log("Object is not iterabe through for of")
+
+
+console.log("For in for Object :");
+const obj = {
+    name:"Yas",
+    age: 30
+}
+for (const key in obj) {
+    console.log(`${key} has value ${obj[key]}`)
+}
+
+console.log("For in for array :");
+for (const key in arr) {
+    console.log(arr[key]);
+}
+
+console.log("For in for map :");
+for (const key in map1) {
+    console.log(key); // map is not iterablethrough for in
+}
+
+console.log("for each :");
+arr.forEach(function (num) { 
+    console.log(num);
+})
+
+console.log("if function is already defined but you want to call in foreach");
+function printMyName(num) {
+    console.log("Hello", num);
+}
+arr.forEach(printMyName);
+
+console.log("object in array :");
+const list = [ 
+    {
+        name : "yashika",
+        age: 10
+    },
+    {
+        name : "Ta",
+        age: 20
+    },
+    {
+        name : "An",
+        age: 30
+    }
+]
+list.forEach((obj) => {
+    console.log(obj.name);
+})
