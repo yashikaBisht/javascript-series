@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class='list'>
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLang(langName) { // traverse trough whole tree so not recommended
+        var lang = document.createElement('li');
+        lang.innerHTML = `${langName}`;
+        document.querySelector('.list').appendChild(lang);
+    }
+    addLang('Java');
+
+    function addOptiLang(langName){// not have to traverse tree
+        var lang = document.createElement('li');
+        lang.appendChild(document.createTextNode(langName));
+        document.querySelector('.list').appendChild(lang);
+    }
+    addOptiLang('CSS');
+    addOptiLang('HTML');
+
+    //replace with
+    const secElement = document.querySelector('li:nth-child(2)');
+    const newLang = document.createElement('li');
+    newLang.textContent= "Golang";
+    secElement.replaceWith(newLang);
+
+
+    //replace 1st
+    const first = document.querySelector('li:first-child');
+    const newEl = document.createElement('li');
+    newEl.textContent = "C++";
+    //first.outerHTML = '<li>React</li>'
+    first.replaceWith(newEl);
+
+    //remove 
+    const last = document.querySelector('li:last-child');
+    last.remove();
+</script>
+</html>
