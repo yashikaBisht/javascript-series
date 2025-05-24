@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const url ="https://fake-json-api.mock.beeceptor.com/users";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4) {
+            const response = JSON.parse(this.responseText);
+            for(var i=0; i < response.length; i++) {
+                console.log(response[i].id, response[i].name);
+            }
+        }
+    };
+    xhr.send();
+</script>
+</html>
